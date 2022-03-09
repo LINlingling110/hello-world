@@ -1,0 +1,53 @@
+#include<stdio.h>
+
+int main(){
+	int month_day[13]={0,31,28,31,30,31,30,31,31,30,31,30,31};
+
+    int year,month,day,week;
+    int i;
+
+    scanf("%d%d%d",&year,&month,&day);
+
+    scanf("%d",&week);//输入当年元旦是星期几
+
+    if(month<=0||month>12)
+
+           printf("date error\n");
+
+    else{
+
+           for(i=1;i<month;i++){
+
+             switch(month)
+			 {case 1:
+			  case 3:
+			  case 4:
+			  case 5:
+			  case 6:
+			  case 7:
+			  case 8:
+			  case 9:
+			  case 10:
+			  case 11:
+			  case 12:
+			  
+			  	 day=day+month_day[i];
+			  case 2:
+			    if((year%4==0&&year%100!=0)||year%400==0)
+                   day++;
+              break;
+//填写多行代码，用switch结构，
+
+//或者else – if结构，或者两者结合，确定每月的天数
+   
+              }
+           }
+
+          
+             printf("%d",(day+week-1)%7);
+    }
+
+    
+    return 0;
+
+}
