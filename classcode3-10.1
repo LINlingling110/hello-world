@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main()
+{
+	int year_start,year_end;
+	int i = 0;
+	int year; 
+	scanf("[%d,%d]",&year_start,&year_end);
+
+	for( year=year_start;year<=year_end;year++)
+	{  
+	if((year%4==0&&year%100!=0)||year%400==0)
+	   	    i++;
+	  
+	   
+    }
+	printf("years=%d",i);
+	return 0;
+}
